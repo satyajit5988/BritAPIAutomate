@@ -28,4 +28,5 @@ jobs:
 
       - name: Run tests
         run:
-          pytest Testcases/ -v --html=C:/Users/User/PycharmProjects/BritAPIAutomate/Reports/report.html --capture=no
+          mkdir -p Reports
+          pytest Testcases/ -v --html=/Reports/report.html --capture=no
