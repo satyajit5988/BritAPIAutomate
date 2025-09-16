@@ -1,6 +1,6 @@
 # Python Packages Required To Run The Tests -
 
-The project root location contains the requirment.txt file which lists all the packages required to run the test after cloning the repositiory in the local system. Base python version is ##3.13.XX##.
+The project root location contains the requirment.txt file which lists all the packages required to run the test after cloning the repositiory in the local system. Base python version is # 3.13.XX.
 Few of the major libraries that are used in this project are:
 
 1) pip install requests
@@ -143,4 +143,5 @@ Option 2: Run jenkins on a different port number.
 
    pytest -s --alluredir="path of report folder" - To run test suite and generate JSON report
    allure serve "path of report folder" - To generate HTML reports
+
 
