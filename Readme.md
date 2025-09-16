@@ -30,7 +30,7 @@ Few of the major libraries that are used in this project are:
 
 # Cloning Code Repositiory - 
 
-In order to clone the repositiory on your local system, create a folder to store the code, open GitBash terminal and redirect to the created folder location andrun below commands:
+In order to clone the repositiory on your local system, create a folder to store the code, open __GitBash__ terminal and redirect to the created folder location andrun below commands:
 
 ```cd <Path of folder>```
 
@@ -73,6 +73,49 @@ __Github Actions__ can be used for pushing or pulling your code. Steps to setup 
 
 2) Create a ```.yml``` file and add the below code to it:
 
+   ```yaml
+      name: Python CI Pipeline (Github Actions)
+
+      on:
+        push:
+          branches:
+            - main
+        pull_request:
+          branches:
+            - main
+
+      jobs:
+        test:
+          runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v3
+
+         - name: Set up Python
+           uses: actions/setup-python@v4
+           with:
+             python-version: '3.13'
+
+         - name: Install dependencies
+           run: |
+             python -m pip install --upgrade pip
+             pip install -r requirements.txt
+
+         - name: Create Reports Folder
+           run: |
+             mkdir -p Reports
+
+         - name: Run tests
+           run: |
+             pytest TestCases/test_EndToEnd.py -v --html=Reports/report.html --capture=no --disable-warnings
+
+         - name: Upload HTML report
+           uses: actions/upload-artifact@v4
+           with:
+             name: TestReportHTML
+             path: Reports/report.html
+
 4) Commit this file and push to repo:
 
    ```git add .github/workflows/ci.yml```
@@ -82,10 +125,3 @@ __Github Actions__ can be used for pushing or pulling your code. Steps to setup 
    ```git push origin main```   
           
 5) Go to Actions tab in Github repository and check if the workflow ran and it is successful or not - https://github.com/satyajit5988/BritAPIAutomate/actions
-
-
-
-
-
-
-
