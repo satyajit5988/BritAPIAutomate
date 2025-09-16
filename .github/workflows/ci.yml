@@ -32,7 +32,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest TestCases/test_EndToEnd.py -v --html=Reports/report.html --capture=no
+          pytest TestCases/test_EndToEnd.py -v --html=Reports/report.html --capture=no --disable-warnings
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
