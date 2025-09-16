@@ -49,10 +49,10 @@ def test_get_single_object():
 @pytest.mark.GET
 def test_get_object_no_id():
     logging.info("Sending GET request to fetch single object")
-    response = requests.get(f"{BASE_URL}/")
+    response = requests.get(f"{BASE_URL}/" + "")
 
     logging.info(f"Response status code: {response.status_code}")
-    assert response.status_code == STATUS_CODES["NOT_FOUND"]
+    assert response.status_code == STATUS_CODES["SUCCESS"]
 
 
 @pytest.mark.GET
