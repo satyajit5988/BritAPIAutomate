@@ -17,6 +17,10 @@ def sample_payload():
         }
     }
 
+@pytest.fixture(scope="module")
+def empty_payload():
+    return {}
+
 
 @pytest.fixture(scope="module")
 def post_create_object(sample_payload):
