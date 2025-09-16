@@ -26,7 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
-        run:
+      - name: Create Reports Folder
+        run: |
           mkdir -p Reports
-          pytest Testcases/ -v --html=/Reports/report.html --capture=no
+
+      - name: Run tests
+        run: |
+          pytest Testcases/ -v --html=Reports/report.html --capture=no
