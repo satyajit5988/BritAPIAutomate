@@ -1,10 +1,11 @@
 import jsonpath
+import pytest
 import requests
 import logging
-
 from Config.config import BASE_URL, STATUS_CODES
 
 
+@pytest.mark.END2END
 def test_get_all_objects():
     global device_id1, device_id2
     logging.info("Sending GET request to fetch all objects")
@@ -19,6 +20,7 @@ def test_get_all_objects():
     assert device_id1[0] == "1"
 
 
+@pytest.mark.END2END
 def test_get_single_object():
     logging.info("Sending GET request to fetch single object")
     response = requests.get(f"{BASE_URL}/" + str(device_id1[0]))
@@ -32,6 +34,7 @@ def test_get_single_object():
     assert data["id"] == "1"
 
 
+@pytest.mark.END2END
 def test_get_invalid_object():
     logging.info("Sending GET request to fetch invalid object")
     response = requests.get(f"{BASE_URL}/100")
@@ -40,6 +43,7 @@ def test_get_invalid_object():
     assert response.status_code == STATUS_CODES["NOT_FOUND"]
 
 
+@pytest.mark.END2END
 def test_put_update_object(post_create_object, sample_payload):
     object_id = post_create_object
     updated_payload = {**sample_payload, "name": "Poco M6 Pro", "price": 1799.0}
@@ -55,6 +59,7 @@ def test_put_update_object(post_create_object, sample_payload):
     assert data["name"] == "Poco M6 Pro"
 
 
+@pytest.mark.END2END
 def test_patch_update_object(post_create_object):
     object_id = post_create_object
     patch_payload = {"name": "POCO X7 Pro 5G 256GB Smartphone"}
@@ -70,6 +75,7 @@ def test_patch_update_object(post_create_object):
     assert response.json()["name"] == "POCO X7 Pro 5G 256GB Smartphone"
 
 
+@pytest.mark.END2END
 def test_delete_object(post_create_object):
     object_id = post_create_object
 
