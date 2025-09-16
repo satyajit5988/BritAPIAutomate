@@ -35,7 +35,7 @@ jobs:
           pytest TestCases/ -v --html=Reports/report.html --capture=no
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: TestReportHTML
           path: Reports/report.html
