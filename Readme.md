@@ -1,10 +1,10 @@
-# Code Repositiory -
+# Code Repository -
 
 __https://github.com/satyajit5988/BritAPIAutomate__
 
 # Python Packages Required To Run The Tests -
 
-The project root location contains the __requirment.txt__ file which lists all the packages required to run the test after cloning the repositiory in the local system. Base python version is __3.13.XX__.
+The project root location contains the __requirement.txt__ file which lists all the packages required to run the test after cloning the repository in the local system. Base python version is __3.13.XX__.
 
 Few of the major libraries that are used in this project are:
 
@@ -28,9 +28,9 @@ Few of the major libraries that are used in this project are:
 
 10 ) ```pip install allure-pytest```
 
-# Cloning Code Repositiory - 
+# Cloning Code Repository - 
 
-In order to clone the repositiory on your local system, create a folder to store the code, open __GitBash__ terminal and redirect to the created folder location andrun below commands:
+In order to clone the repository on your local system, create a folder to store the code, open __GitBash__ terminal and redirect to the created folder location and run below commands:
 
 ```cd <Path of folder>```
 
@@ -38,7 +38,7 @@ In order to clone the repositiory on your local system, create a folder to store
 
 # Setting Up GIT For Source Code Management -
 
-__Git__ can be used for pushing or pulling your code. Steps to setup remote GIT repository is as follows:
+__Git__ can be used for pushing or pulling your code. Steps to set up remote GIT repository is as follows:
 
 1) Create a remote repository by login to GitHub. 
    Note the HTTP's URL to connect to it - __git@github.com:XYZ/ABC.git__
@@ -59,11 +59,11 @@ __Git__ can be used for pushing or pulling your code. Steps to setup remote GIT 
 8) Finally push your code using below command - 
    __git push -u origin main__
 
-# Setting Up CI Pipeline Using Github Actions -
+# Setting Up CI Pipeline Using GitHub Actions -
 
-__Github Actions__ can be used for pushing or pulling your code. Steps to setup remote GIT repository is as follows:
+__GitHub Actions__ can be used for pushing or pulling your code. Steps to set up remote GIT repository is as follows:
 
-1) In our project repositiory, create the folders: 
+1) In our project repository, create the folders: 
 
    Open GitBash and run the below commands:
 
@@ -116,7 +116,7 @@ __Github Actions__ can be used for pushing or pulling your code. Steps to setup 
              name: TestReportHTML
              path: Reports/report.html
 
-4) Commit this file and push to repo:
+3) Commit this file and push to repo:
 
    ```git add .github/workflows/ci.yml```
 
@@ -124,4 +124,4 @@ __Github Actions__ can be used for pushing or pulling your code. Steps to setup 
 
    ```git push origin main```   
           
-5) Go to Actions tab in Github repository and check if the workflow ran and it is successful or not - https://github.com/satyajit5988/BritAPIAutomate/actions
+4) Go to Actions tab in GitHub repository and check if the workflow ran, and it is successful or not - https://github.com/satyajit5988/BritAPIAutomate/actions
