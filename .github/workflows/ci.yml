@@ -32,4 +32,4 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest Testcases/ -v --html=Reports/report.html --capture=no
+          pytest TestCases/ -v --html=Reports/report.html --capture=no
